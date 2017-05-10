@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="client.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div ng-controller="blog">
+		<h1>{{hello}}</h1>
+		<input ng-model="title" type="text" class="form-control">
+		<textarea ng-model="body" name="" id="" cols="30" rows="5" class="form-control"></textarea>
+		<button ng-click="createblog(title,body)" class="btn btn-primary btn-block">add blog</button>
+		<div ng-repeat="po in contents">
+			<h2>{{po.title}} <span ng-click="remove()" class="glyphicon glyphicon-remove"></span> </h2>
+			<h3>{{po.body}}</h3>
+		</div>
+	</div>
+</body>
+</html>
